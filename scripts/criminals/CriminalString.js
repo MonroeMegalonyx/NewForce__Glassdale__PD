@@ -1,6 +1,6 @@
 export function stringCriminals(criminalObject) {
     return `
-    <div class = "criminal-list__person">
+    <div class = "criminal-list__person item-container">
       <h2>${criminalObject.name}</h2>
       <p>Age: ${criminalObject.age}</p>
       <p>Crime: ${criminalObject.conviction}</p>
