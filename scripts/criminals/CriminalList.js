@@ -16,4 +16,8 @@ export const listCriminals = () => {
         console.log(CriminalsAsHTMLString);
         criminalContainer.innerHTML = `${CriminalsAsHTMLString}`;
     })
-}
+};
+
+document.querySelector("#criminals-nav-link").addEventListener("click", () => {
+  listCriminals()
+});
