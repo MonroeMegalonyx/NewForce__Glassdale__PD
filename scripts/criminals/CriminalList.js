@@ -1,7 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js";
 import { stringCriminals } from "./CriminalString.js";
 //function to list all criminals, called when clicking the criminal tab in menu bar
- export const listCriminals = () => {
+export const listCriminals = () => {
     let criminalContainer = document.querySelector(".criminal-list");
 
     // Extra step to first fetch all the data and saving it use getCriminals function, then possible to use it like earlier examples
@@ -9,13 +9,13 @@ import { stringCriminals } from "./CriminalString.js";
         let criminals = useCriminals();
         let CriminalsAsHTMLString = "";
 
-         //console.table(criminals);
+        //console.table(criminals);
 
-         for (let i = 0; i < criminals.length; i++) {
+        for (let i = 0; i < criminals.length; i++) {
             CriminalsAsHTMLString += stringCriminals(criminals[i]);
         }
 
-         console.log(CriminalsAsHTMLString);
+        console.log(CriminalsAsHTMLString);
         criminalContainer.innerHTML = `${CriminalsAsHTMLString}`;
     });
 };
@@ -25,23 +25,34 @@ document.querySelector("#criminals-nav-link").addEventListener("click", () => {
 });
 
 //function to filter criminals by crime given as parameter and then list only those criminals
-export const listFilteredCriminals = (convictionFilter) => {
+export const listFilteredCriminals = (convictionFilter, officerFilter) => {
     let criminalContainer = document.querySelector(".criminal-list");
-//function to get list of criminals then filter them by crime
+    //function to get list of criminals then filter them by crime
     getCriminals().then(() => {
         let criminals = useCriminals();
 
         // If we get input from the convictions filter, filter our criminals so that we only see ones with that conviction
         //if (convictionFilter) {
         //    criminals =  // write your filter here
-        //} 
+        //}
 
-        const specificCriminals = criminals.filter(criminalObject => criminalObject.conviction === convictionFilter)
-        console.log(specificCriminals)
+        const filteredByConviction = criminals.filter(
+            (criminalObject) => criminalObject.conviction === convictionFilter
+        );
+        console.log(filteredByConviction);
 
-        specificCriminals.forEach((singleCriminal) => {
-           criminalContainer.innerHTML += stringCriminals(singleCriminal);
+        filteredByConviction.forEach((singleCriminal) => {
+            criminalContainer.innerHTML += stringCriminals(singleCriminal);
+        });
+
+        const filteredByArrestingOfficer = criminals.filter(
+            (criminalObject) =>
+                criminalObject.arrestingOfficer === officerFilter
+        );
+        console.log(filteredByArrestingOfficer);
+
+        filteredByArrestingOfficer.forEach((singleCriminal) => {
+            criminalContainer.innerHTML += stringCriminals(singleCriminal);
         });
     });
 };
-

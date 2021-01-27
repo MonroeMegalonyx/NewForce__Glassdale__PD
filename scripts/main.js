@@ -26,3 +26,7 @@ darkModeButton.addEventListener("click", function () {
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
 
 ConvictionSelect()
+
+import { OfficerSelect } from "./officers/OfficerSelect.js";
+
+OfficerSelect()

@@ -6,7 +6,7 @@ import { getConvictions, useConvictions } from "./ConvictionProvider.js";
 import { listCriminals, listFilteredCriminals } from "/scripts/criminals/CriminalList.js";
 
 // Get a reference to the DOM element where the <select> will be rendered
-const contentTarget = document.querySelector(".conviction-list");
+const contentTarget = document.querySelector(".conviction-dropdown");
 
 export const ConvictionSelect = () => {
     // Get all convictions from application state
@@ -27,7 +27,7 @@ const render = (convictionsCollection) => {
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
             ${convictionsCollection.map((currentCovictioninLoop) => {
-                console.log(currentCovictioninLoop.name)
+                //console.log(currentCovictioninLoop.name)
                 return `<option>${currentCovictioninLoop.name}</option>`
             })}
         </select>
@@ -37,10 +37,10 @@ const render = (convictionsCollection) => {
 // This won't throw an error, but it will fire any time there's a change event anywhere in the main container
 const eventHub = document.querySelector("body")
 eventHub.addEventListener("change", (eventObject) => {
-    console.log("You clicked somewhere in the main container")
+    // console.log("You clicked somewhere in the main container")
 
     // To be more specific, we need to know specifically what we clicked on
-    console.log("Here is the element you clicked on:",eventObject.target)
+   // console.log("Here is the element you clicked on:",eventObject.target)
 
     if(event.target.id === "crimeSelect"){
         console.log("You selected something from the crime dropdown")
