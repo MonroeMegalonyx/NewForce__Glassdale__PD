@@ -22,3 +22,7 @@ darkModeButton.addEventListener("click", function () {
 // document.querySelector("#criminals-nav-link").addEventListener("click", () => {
 //    listCriminals()
 // });
+
+import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
+
+ConvictionSelect()
