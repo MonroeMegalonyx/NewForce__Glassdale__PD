@@ -8,15 +8,15 @@ import { listCriminals } from "./criminals/CriminalList.js";
 import { listOfficers } from "./officers/OfficerList.js";
 import { listFacilities } from "./facilities/FacilityList.js";
 
-const darkModeButton = document.querySelector("#dark-mode");
+//const darkModeButton = document.querySelector("#dark-mode");
 
-darkModeButton.addEventListener("click", function () {
-    // Select the entire body tag
-    const bodyElement = document.querySelector("body");
+//darkModeButton.addEventListener("click", function () {
+// Select the entire body tag
+//    const bodyElement = document.querySelector("body");
 
-    // Add a class
-    bodyElement.classList.toggle("dark-background");
-});
+// Add a class
+//    bodyElement.classList.toggle("dark-background");
+//});
 
 // Added event listener to make nav bar print contents from JS when user clicks instead of using static HTML
 // document.querySelector("#criminals-nav-link").addEventListener("click", () => {
@@ -25,8 +25,17 @@ darkModeButton.addEventListener("click", function () {
 
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
 
-ConvictionSelect()
+ConvictionSelect();
 
 import { OfficerSelect } from "./officers/OfficerSelect.js";
 
-OfficerSelect()
+OfficerSelect();
+
+
+// Event listener to find button when clicked under criminals
+let eventHub = document.querySelector("body");
+eventHub.addEventListener("click", (eventObject) => {
+    if (eventObject.target.id.includes("associates--")) {
+        console.log("you pushed alibi button")
+    }
+});

@@ -1,8 +1,10 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js";
 import { stringCriminals } from "./CriminalString.js";
+
 //function to list all criminals, called when clicking the criminal tab in menu bar
 export const listCriminals = () => {
-    let criminalContainer = document.querySelector(".criminal-list");
+    //    let criminalContainer = document.querySelector(".criminal-list");
+    //    criminalContainer.innerHTML = ``;
 
     // Extra step to first fetch all the data and saving it use getCriminals function, then possible to use it like earlier examples
     getCriminals().then(() => {
@@ -15,7 +17,15 @@ export const listCriminals = () => {
             CriminalsAsHTMLString += stringCriminals(criminals[i]);
         }
 
-        console.log(CriminalsAsHTMLString);
+        //console.log(CriminalsAsHTMLString);
+
+        // get all containers for menu values and set to empty on each click. This renders only the new click content each time.
+        let criminalContainer = document.querySelector(".criminal-list");
+        //criminalContainer.innerHTML = ``;
+        let facilityContainer = document.querySelector(".facility-list");
+        facilityContainer.innerHTML = ``;
+        let officerContainer = document.querySelector(".officer-list");
+        officerContainer.innerHTML = ``;
         criminalContainer.innerHTML = `${CriminalsAsHTMLString}`;
     });
 };
@@ -26,7 +36,16 @@ document.querySelector("#criminals-nav-link").addEventListener("click", () => {
 
 //function to filter criminals by crime given as parameter and then list only those criminals
 export const listFilteredCriminals = (convictionFilter, officerFilter) => {
+    //let criminalContainer = document.querySelector(".criminal-list");
+
+    // get all containers for menu values and set to empty on each click. This renders only the new click content each time.
     let criminalContainer = document.querySelector(".criminal-list");
+    criminalContainer.innerHTML = ``;
+    let facilityContainer = document.querySelector(".facility-list");
+    facilityContainer.innerHTML = ``;
+    let officerContainer = document.querySelector(".officer-list");
+    officerContainer.innerHTML = ``;
+
     //function to get list of criminals then filter them by crime
     getCriminals().then(() => {
         let criminals = useCriminals();

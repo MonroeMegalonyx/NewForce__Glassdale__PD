@@ -7,7 +7,7 @@ export const useCriminals = () => {
 };
 
 // Create function to fetch the criminal data from the API and save it as the criminal array locally we are used to working with
-export const getCriminals = (convictionVariable) => {
+export const getCriminals = () => {
     return fetch("https://criminals.glassdale.us/criminals")
         .then((response) => response.json())
         .then((parsedCriminals) => {
