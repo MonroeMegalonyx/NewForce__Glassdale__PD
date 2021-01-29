@@ -32,3 +32,7 @@ nav.a {
     margin-right: 2em;
     margin-bottom: 2em;
 }
+
+.alibi-list__person {
+    border: 5px dashed red;
+}

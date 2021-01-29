@@ -27,6 +27,8 @@ export const listCriminals = () => {
         let officerContainer = document.querySelector(".officer-list");
         officerContainer.innerHTML = ``;
         criminalContainer.innerHTML = `${CriminalsAsHTMLString}`;
+        let alibiContainer = document.querySelector(".alibi-list");
+        alibiContainer.innerHTML = ``;
     });
 };
 
@@ -45,6 +47,8 @@ export const listFilteredCriminals = (convictionFilter, officerFilter) => {
     facilityContainer.innerHTML = ``;
     let officerContainer = document.querySelector(".officer-list");
     officerContainer.innerHTML = ``;
+    let alibiContainer = document.querySelector(".alibi-list");
+        alibiContainer.innerHTML = ``;
 
     //function to get list of criminals then filter them by crime
     getCriminals().then(() => {

@@ -3,6 +3,7 @@
  *   which lists all associates and alibis in the Glassdale PD API for given criminal
  */
 import { getAssociates } from "./AlibiProvider.js";
+import { stringAssociates } from "./AlibiString.js";
 
 // Event listener to find button when clicked under criminals
 let eventHub = document.querySelector("body");
@@ -19,6 +20,15 @@ eventHub.addEventListener("click", (eventObject) => {
         let clickedCriminalID = buttonIDArray[1];
         console.log("ID of criminal is",clickedCriminalID);
         let Alibis = getAssociates(clickedCriminalID);
-        console.log(Alibis);
+        //console.log(Alibis);
+
+        // Now that we have the array of known associates for only the criminal selected, print the array in a readable format to the DOM
+        let AlibisAsHTMLString = "";
+        for (let i = 0; i < Alibis.length; i++) {
+            AlibisAsHTMLString += stringAssociates(Alibis[i]);
+        };
+        //console.log(AlibisAsHTMLString);
+        let alibiContainer = document.querySelector(".alibi-list");
+        alibiContainer.innerHTML = `${AlibisAsHTMLString}`;
     }
 });

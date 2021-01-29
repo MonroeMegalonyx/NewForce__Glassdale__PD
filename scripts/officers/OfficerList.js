@@ -20,6 +20,8 @@ export const listOfficers = () => {
         let officerContainer = document.querySelector(".officer-list");
         //officerContainer.innerHTML = ``;
         officerContainer.innerHTML = `${OfficersAsHTMLString}`;
+        let alibiContainer = document.querySelector(".alibi-list");
+        alibiContainer.innerHTML = ``;
     });
 };
 

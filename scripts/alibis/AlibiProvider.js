@@ -5,8 +5,7 @@ import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 // function to filter known associates of a criminal
 export function getAssociates(singleCriminalID) {
     //make criminal array
-    getCriminals().then(() => {
-        let criminals = useCriminals();
+    let criminals = useCriminals();
         let associatesArray = [];
         console.log(associatesArray);
         //console.log("tester tester original array", criminals);
@@ -19,5 +18,4 @@ export function getAssociates(singleCriminalID) {
         }
         console.log("Take 2",associatesArray);
         return associatesArray;
-    });
-};
+    };
