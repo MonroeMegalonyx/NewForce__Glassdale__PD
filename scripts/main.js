@@ -31,11 +31,5 @@ import { OfficerSelect } from "./officers/OfficerSelect.js";
 
 OfficerSelect();
 
-
-// Event listener to find button when clicked under criminals
-let eventHub = document.querySelector("body");
-eventHub.addEventListener("click", (eventObject) => {
-    if (eventObject.target.id.includes("associates--")) {
-        console.log("you pushed alibi button")
-    }
-});
+//Import for event listener on alibi buttons
+import {} from "./alibis/AlibiList.js";
