@@ -3,10 +3,11 @@
 //getCriminals();
 //useCriminals();
 
-import { listCriminals } from "./criminals/CriminalList.js";
-//listCriminals();
-import { listOfficers } from "./officers/OfficerList.js";
-import { listFacilities } from "./facilities/FacilityList.js";
+import {} from "./criminals/CriminalList.js";
+import {} from "./officers/OfficerList.js";
+import {} from "./facilities/FacilityList.js";
+import {} from "./notes/NoteList.js";
+
 
 //const darkModeButton = document.querySelector("#dark-mode");
 
@@ -23,6 +24,7 @@ import { listFacilities } from "./facilities/FacilityList.js";
 //    listCriminals()
 // });
 
+//import dropdown menus
 import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
 
 ConvictionSelect();
@@ -31,5 +33,11 @@ import { OfficerSelect } from "./officers/OfficerSelect.js";
 
 OfficerSelect();
 
-//Import for event listener on alibi buttons
+// import event listener to make button and save notes
+// or just run it so input exists all the time
+import { BuildNoteForm } from "./notes/NoteForm.js";
+BuildNoteForm()
+
+//Import for event listener when alibi button clicked
 import {} from "./alibis/AlibiList.js";
+

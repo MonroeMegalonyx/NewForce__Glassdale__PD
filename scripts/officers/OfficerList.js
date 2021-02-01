@@ -22,6 +22,8 @@ export const listOfficers = () => {
         officerContainer.innerHTML = `${OfficersAsHTMLString}`;
         let alibiContainer = document.querySelector(".alibi-list");
         alibiContainer.innerHTML = ``;
+        let noteContainer = document.querySelector(".note-list");
+        noteContainer.innerHTML = ``;
     });
 };
 

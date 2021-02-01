@@ -29,6 +29,8 @@ export const listCriminals = () => {
         criminalContainer.innerHTML = `${CriminalsAsHTMLString}`;
         let alibiContainer = document.querySelector(".alibi-list");
         alibiContainer.innerHTML = ``;
+        let noteContainer = document.querySelector(".note-list");
+        noteContainer.innerHTML = ``;
     });
 };
 

@@ -24,6 +24,8 @@ export const listFacilities = () => {
         facilityContainer.innerHTML = `${FacilitiesAsHTMLString}`;
         let alibiContainer = document.querySelector(".alibi-list");
         alibiContainer.innerHTML = ``;
+        let noteContainer = document.querySelector(".note-list");
+        noteContainer.innerHTML = ``;
     });
 };
 
