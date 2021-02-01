@@ -4,20 +4,20 @@
 }
 
 nav {
-    padding: 2em;
-}
-
-nav.a {
-    display: flex;
-    flex-wrap: wrap;
+    padding: 1em;
+    font-size: 24pt;
 }
 
 #filter-dropdown {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 2em;
-    height: 10em;
+}
+
+.note-input {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
 }
 
 .flex-container {
