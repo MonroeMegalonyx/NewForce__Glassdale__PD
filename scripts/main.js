@@ -35,8 +35,10 @@ OfficerSelect();
 
 // import event listener to make button and save notes
 // or just run it so input exists all the time
-import { BuildNoteForm } from "./notes/NoteForm.js";
-BuildNoteForm()
+import { CriminalNoteSelect } from "./notes/NoteForm.js";
+// Instead of building the note, we changed to building the note with a dropdown of the criminal array, so run function that builds the criminal array and then runs that through BuildNoteForm automatically
+//BuildNoteForm()
+CriminalNoteSelect()
 
 //Import for event listener when alibi button clicked
 import {} from "./alibis/AlibiList.js";
