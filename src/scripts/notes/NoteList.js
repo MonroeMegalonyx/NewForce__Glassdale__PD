@@ -3,6 +3,8 @@
 import { getNotes, useNotes } from "./NoteProvider.js";
 //import { stringNotes } from "./NoteString.js";
 import { getCriminals, useCriminals } from "/scripts/criminals/CriminalProvider.js"
+import { CriminalNoteSelect } from "./NoteForm.js";
+
 
 // New function to render the cirminals name by matching to the ID now saved in the json database. Copied from example but had to update criminalID case sensitive and use double == instead of ===
 const render = (noteCollection, criminalCollection) => {
@@ -53,4 +55,5 @@ export const listNotes = () => {
 // List the notes when picked in the navigation bar
 document.querySelector("#notes-nav-link").addEventListener("click", () => {
     listNotes();
+    CriminalNoteSelect();
 });

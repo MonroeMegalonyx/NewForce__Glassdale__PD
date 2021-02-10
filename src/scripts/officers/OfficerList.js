@@ -24,6 +24,8 @@ export const listOfficers = () => {
         alibiContainer.innerHTML = ``;
         let noteContainer = document.querySelector(".note-list");
         noteContainer.innerHTML = ``;
+        // Hide the notes button
+        document.querySelector(".note-input").innerHTML = "";
     });
 };
 

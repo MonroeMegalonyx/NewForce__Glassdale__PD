@@ -1,5 +1,6 @@
 import { saveNote } from "./NoteProvider.js";
 import { getCriminals, useCriminals } from "/scripts/criminals/CriminalProvider.js";
+import { listNotes } from "./NoteList.js"
 // Build the form to enter new notes
 
 // Target the DOM element where we will enter notes by form
@@ -68,7 +69,6 @@ contentTarget.addEventListener("click", clickEvent => {
         }
         // Change API state and application state
         saveNote(newNote)
-        .then(NoteList) // Refresh your list of notes once you've saved your new one
-        debugger
+        .then(listNotes()) // Refresh your list of notes once you've saved your new one
     }
 })
