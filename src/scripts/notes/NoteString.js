@@ -1,4 +1,4 @@
-// Write notes in HTML
+// Write notes in HTML, no longer used
 
 export function stringNotes(notesObject) {
     return `

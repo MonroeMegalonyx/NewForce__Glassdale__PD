@@ -36,3 +36,13 @@ nav {
 .alibi-list__person {
     border: 5px dashed red;
 }
+
+.note-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.note {
+    border: 1px dashed black;
+    margin: 2em;
+}

@@ -1,21 +1,6 @@
 {
   "notes": [
     {
-      "noteText": "Hello",
-      "criminalID": "5",
-      "id": 1
-    },
-    {
-      "noteText": "Notes",
-      "criminalID": "13",
-      "id": 2
-    },
-    {
-      "noteText": "More notes",
-      "criminalID": "51",
-      "id": 3
-    },
-    {
       "noteText": "No notes here",
       "criminalID": "25",
       "id": 4

@@ -17,9 +17,9 @@ export const CriminalNoteSelect = () => {
 // SOME NEW create the form to enter notes, adding a parameter for the array of criminals to make criminal dropdown box
 export const BuildNoteForm = (criminalsCollection) => {
     contentTarget.innerHTML = `
-        <p>Write your note here: <input placeholder="Enter note" type="text" id="note-text"></input>
-        <select class="dropdown" id="criminalSelect">
-            <option>You must select a criminal for this note</option>
+        <p>Write your note here: <input placeholder="Enter note" type="text" id="note-text"></input></p>
+        <p><select class="dropdown" id="criminalSelect">
+            <option>You must select a criminal for this note</option></p>
             ${criminalsCollection.map((currentCriminalinLoop) => {
                 return `<option value="${currentCriminalinLoop.id}">${currentCriminalinLoop.name}</option>`;
             })}

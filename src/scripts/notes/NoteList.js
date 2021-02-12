@@ -1,6 +1,6 @@
 // List all notes that exist in HTML
 
-import { getNotes, useNotes } from "./NoteProvider.js";
+import { getNotes, useNotes, deleteNote } from "./NoteProvider.js";
 //import { stringNotes } from "./NoteString.js";
 import { getCriminals, useCriminals } from "/scripts/criminals/CriminalProvider.js"
 import { CriminalNoteSelect } from "./NoteForm.js";
@@ -14,11 +14,14 @@ const render = (noteCollection, criminalCollection) => {
 
         return `
             <section class="note">
-                <h2>Note about ${relatedCriminal.name}</h2>
-                ${note.noteText}
+                <h2>Note #${note.id}</h2>
+                <p>This note says: ${note.noteText}</p>
+                <p>Its tagged to criminal: ${relatedCriminal.name}</p>
+                <p><button id="deleteNote--${note.id}">Delete</button></p>
+
             </section>
         `
-    })
+    }).join("")
 }
 
 // Function to list all notes that exist on our local server, and erase other content on the page when notes are rendered
@@ -56,4 +59,19 @@ export const listNotes = () => {
 document.querySelector("#notes-nav-link").addEventListener("click", () => {
     listNotes();
     CriminalNoteSelect();
+});
+
+// NEW NEW adding Event listener for the delete button
+document.querySelector("body").addEventListener("click", (eventObject) => {
+  if (eventObject.target.id.startsWith("deleteNote")) {
+    const idToDelete = eventObject.target.id.split("--")[1]
+    // ---------- Write your code here -------------//
+    // Call the deleteNote function and pass in the appropriate id
+    // Then call NoteList to refresh the list of notes
+    console.log(idToDelete);
+    deleteNote(idToDelete);
+    console.log("Note",idToDelete,"was deleted")
+    listNotes();
+    CriminalNoteSelect();
+  }
 });

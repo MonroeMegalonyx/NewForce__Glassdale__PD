@@ -27,3 +27,10 @@ export const saveNote = note => {
     })
     .then(getNotes) // After we add a note, get them all again so our new note appears in our collection
 };
+
+// NEW NEW adding a delete call to delete notes from the local server
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+}
